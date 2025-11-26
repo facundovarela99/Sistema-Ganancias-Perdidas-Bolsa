@@ -1,0 +1,28 @@
+{
+  "name": "sistema-ganancias-perdidas-bolsa",
+  "version": "1.0.0",
+  "description": "Sistema de ganancias y perdidas privado para registrar operaciones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facundovarela99/Sistema-Ganancias-Perdidas-Bolsa.git"
+  },
+  "keywords": [
+    "Node",
+    "node.js",
+    "JavaScript",
+    "AccionBursatil"
+  ],
+  "author": "Facundo Varela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facundovarela99/Sistema-Ganancias-Perdidas-Bolsa/issues"
+  },
+  "homepage": "https://github.com/facundovarela99/Sistema-Ganancias-Perdidas-Bolsa#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
