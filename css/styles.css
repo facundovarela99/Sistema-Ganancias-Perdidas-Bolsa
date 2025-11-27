@@ -1,0 +1,4 @@
+.activos .divPadreActivos{
+    display: flex;
+    flex-wrap: wrap;
+}

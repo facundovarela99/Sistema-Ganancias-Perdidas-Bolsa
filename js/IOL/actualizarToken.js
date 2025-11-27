@@ -1,0 +1,1 @@
+const IOL_AUTH_URL_TOKEN = 'https://api.invertironline.com/token';
