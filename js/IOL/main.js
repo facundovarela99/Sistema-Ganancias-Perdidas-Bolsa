@@ -1,4 +1,4 @@
-import { fetchData } from "./obtenerToken.js";
+import { fetchData } from "./resolverEndpoint.js";
 import { mostrarDataEstadoCuenta } from "./estadoCuenta.js";
 import { mostrarDataActivos } from "./activos.js";
 
