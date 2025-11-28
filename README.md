@@ -2,5 +2,5 @@
 
 <!-- 1. Primera instalación: dotenv -> npm install dotenv  -->
 
-2. Crear archivo .env con las credenciales: IOL_CLIENT_ID/USER='', IOL_CLIENT_SECRET/PASSWORD='', IOL_TOKEN=''
+1. Crear archivo .env con las credenciales de Invertir Online S.A: IOL_CLIENT_ID/USER='', IOL_CLIENT_SECRET/PASSWORD='', IOL_TOKEN=''
 
