@@ -47,7 +47,7 @@ async function getBearerToken(refreshToken) {
 // }
 
 // // Simulación: ya tienes un refresh token válido
-// getRefreshToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNTI2MzE3IiwianRpIjoiYWUxOGE1M2EtZTNhYS00ZjY3LTg1ODMtYzRhZTVmM2JiZDg3IiwicnRfZmFtaWx5IjoiNTA2MGU4OWYtODkwNi00NDhmLWEyYmEtZDk0M2Q3ZTViOGJiIiwibmJmIjoxNzY0MjY2Njc5LCJleHAiOjE3NjQyNjc4NzksImlhdCI6MTc2NDI2NjY3OSwiaXNzIjoiSU9MT2F1dGhTZXJ2ZXIiLCJhdWQiOiJJT0xPYXV0aFNlcnZlciJ9.gwzPb4uMNsiBKK3VTfyaQoAqZ8dL8oXoyXXHB5xEYZ2aGopZyZ62KUlPrQzJyyei1O7UhDDsO-xlFcVCWwTpIvjyGZe2d38EyJfQMizzHS9NLaWVox8Z3cMqSxfBaBImyb7tkQCyrSaTMkhWlxzMslla0U1ckqep6GVTjlXxFe8K3IYroVxQeEljZPF76i2eYalUfs0Leh6UUeEp68nNpXwJV8SgvMXHRIiqC5fXUEsHVJQyrwJH_cuLOfby540WOHYcbG10AwLxzmybELGAW3azoBdeqUPn_BgxZLo8-eYZtYH-cN2UktdeNGLU6sMbYJdfCYoMUL-K45OWy2Xebw");
+// getRefreshToken("aquí iria el refresh token");
 
 async function loginIOL(username, password) {
     const response = await fetch("https://api.invertironline.com/token", {

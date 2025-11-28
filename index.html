@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" defer src="./js/IOL/main.js"></script>
-    <script type="module" defer src="./js/IOL/actualizarToken.js"></script>
+    <!-- <script type="module" defer src="./js/IOL/actualizarToken.js"></script> -->
     <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
@@ -13,6 +13,17 @@
         <div class="tituloEstadoCuenta">
             <h1><strong>ESTADO DE CUENTA</strong></h1>
         </div>
+    </section>
+    <section class="seccionTitulos">
+        <div class="tituloTitulos">
+            <h1><strong>TITULOS</strong></h1>
+        </div>
+        <div class="divInputTituloBuscado">
+            <label for="inputTitulo">Ingrese el titulo a buscar</label>
+            <input name="inputTitulo" id="inputTitulo" type="text">
+            <button type="button" id="botonBuscarTitulo">BUSCAR</button>
+        </div>
+        <div class="tituloBuscado"></div>
     </section>
     <section class="activos">
         <div class="tituloActivos">

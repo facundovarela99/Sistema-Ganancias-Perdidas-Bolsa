@@ -6,3 +6,16 @@
 .activos .tituloActivos,.tituloEstadoCuenta{
     text-align: center;
 }
+
+.seccionTitulos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccionTitulos .divInputTituloBuscado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
