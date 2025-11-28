@@ -13,15 +13,3 @@ export async function fetchData(endpoint) {
         console.error("Error al obtener los datos:", error);
     }
 }
-
-
-// fetch(IOL_PORTFOLIO_URL, { //funcion con fetch
-//     method: 'GET',
-//     headers: {
-//         'Authorization': 'Bearer aquí iría el token :)',
-//         'Accept': 'application/json'
-//     }
-// })
-//     .then(res => res.json())
-//     .then(data => mostrarData(data))
-//     .catch(err => console.error(err));
