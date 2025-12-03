@@ -1,3 +1,7 @@
+import dotenv from "dotenv";
+dotenv.config({ path: "../../.env" }); //si se quita hay que ejecutar el script desde la raíz del proyecto 
+
+
 const IOL_AUTH_URL_TOKEN = 'https://api.invertironline.com/token';
 
 async function getBearerToken(refreshToken) {
@@ -36,26 +40,29 @@ ActualizarRefreshToken("aquí iria el último refresh token obtenido");
 
 getBearerToken('aquí iria el refresh token :)');
 
-// async function loginIOL(username, password) { //Función para simular el login y obtener el primer par de tokens (propenso a llevar a un bloqueo de cuenta si se usa repetidamente)
-//     const response = await fetch("https://api.invertironline.com/token", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//         body: `grant_type=password&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
-//     });
+async function loginIOL(username, password) { //Función para simular el login y obtener el primer par de tokens (propenso a llevar a un bloqueo de cuenta si se usa repetidamente)
+    const response = await fetch("https://api.invertironline.com/token", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `grant_type=password&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+    });
 
-//     if (!response.ok) {
-//         console.error("Error:", response.status, response.statusText);
-//         const errorText = await response.text();
-//         console.error("Detalle:", errorText);
-//         return null;
-//     }
+    if (!response.ok) {
+        console.error("Error:", response.status, response.statusText);
+        const errorText = await response.text();
+        console.error("Detalle:", errorText);
+        return null;
+    }
 
-//     const data = await response.json();
-//     console.log("Access token:", data.access_token);
-//     console.log("Refresh token:", data.refresh_token);
+    const data = await response.json();
+    console.log("Access token:", data.access_token);
+    console.log("Refresh token:", data.refresh_token);
 
-//     return data; // Devuelve el objeto con los tokens
-// }
+    return data; // Devuelve el objeto con los tokens
+}
 
 // // Ejemplo de uso:
-// loginIOL("TU_USUARIO", "TU_PASSWORD");
+const username = process.env.IOL_usuario;
+const password = process.env.IOL_contrasenia;
+//
+loginIOL(username, password);

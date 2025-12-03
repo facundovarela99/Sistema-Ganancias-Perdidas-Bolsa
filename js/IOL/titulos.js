@@ -1,7 +1,7 @@
 import { fetchData } from "./resolverEndpoint.js";
-let IOL_TITULO = 'https://api.invertironline.com/api/v2/bcba/Titulos/titulo/CotizacionDetalle';
+let IOL_TITULO = 'https://api.invertironline.com/api/v2/bcba/Titulos/titulo/Cotizacion';
 
-const seccionTitulos = document.querySelector('.seccionTitulos');
+const cardTitulo = document.querySelector('.tituloBuscado');
 
 export function ingresarTitulo(titulo){
     if (titulo){
@@ -10,15 +10,14 @@ export function ingresarTitulo(titulo){
         console.log(nuevoTitulo);
     }
     else{
-        const divHijo = document.createElement('div');
-        divHijo.innerHTML=`No ingresó ningún título.`;
-        seccionTitulos.appendChild(divHijo);
+        cardTitulo.innerHTML = `
+            No ingresó ningún título.
+        `;
     }
 }
 
 
 export function mostrarDataTitulos(data){
-    const cardTitulo = document.querySelector('.tituloBuscado');
     cardTitulo.innerHTML = `
         <h2>Título: ${data.simbolo}</h2>
         <h3>Descripcion: ${data.descripcionTitulo}</h3>

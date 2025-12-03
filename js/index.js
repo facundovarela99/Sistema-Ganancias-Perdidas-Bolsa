@@ -1,8 +1,10 @@
-require('dotenv').config();
+import dotenv from "dotenv";
+dotenv.config({ path: "../.env" });
 
-const client_id = process.env.IOL_CLIENT_ID;
-const client_secret = process.env.IOL_CLIENT_SECRET;
-const token = process.env.IOL_TOKEN;
+const usu = process.env.IOL_usuario;
+const pass = process.env.IOL_contrasenia;
+const refreshToken = process.env.IOL_REFRESH_TOKEN;
+const accessToken = process.env.IOL_REFRESH_TOKEN;
 
-console.log("Client ID:", client_id);
-console.log("Token:", token);
+console.log("Usuario:", usu);
+console.log("Access Token:", accessToken);
