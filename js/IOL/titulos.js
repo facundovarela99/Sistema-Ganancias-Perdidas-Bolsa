@@ -18,6 +18,7 @@ export function titulosPage(){
                 <input name="inputTitulo" id="inputTitulo" type="text">
                 <button type="button" id="botonBuscarTitulo">BUSCAR</button>
         </div>
+        <div id="mensajeError"></div>
     `;
     mainIndex.innerHTML=seccionTitulo.outerHTML;
 
@@ -28,16 +29,23 @@ export function titulosPage(){
 }
 
 function ingresarTitulo(titulo){
+    const mensajeError = document.getElementById('mensajeError');
     if (titulo){
         let nuevoTitulo = IOL_TITULO.replace('titulo', titulo);
         fetchData(nuevoTitulo).then(data => mostrarDataTitulos(data));
         document.getElementById('inputTitulo').value = '';
         console.log(nuevoTitulo);
+        mensajeError.innerHTML = '';
     }
     else{
-        seccionTitulo.innerHTML = `
-            No ingresó ningún título.
-        `;
+        if (divTarjeta){
+            divTarjeta.innerHTML = "";
+        }
+        mensajeError.innerHTML = `
+            <p style="color:red; font-weight:bold;">
+                No ingresó ningún título. Por favor ingresar un título.
+            </p>
+        `
     }
 }
 

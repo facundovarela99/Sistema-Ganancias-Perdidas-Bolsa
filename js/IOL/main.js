@@ -10,6 +10,7 @@ export const mainIndex = document.getElementById('mainIndex');
 const botonEstadoCuenta = document.querySelector('.botonEstadoCuenta');
 const botonActivos = document.querySelector('.botonActivos');
 const botonTitulos = document.querySelector('.botonTitulos');
+const botonRegistros = document.querySelector('.botonMisRegistros');
 
 const dataEstadoCuenta = await fetchData(IOL_ESTADO_CUENTA_URL)
 const dataActivos = await fetchData(IOL_PORTFOLIO_ACTIVOS_URL); 
@@ -27,3 +28,9 @@ botonActivos.addEventListener('click', ()=>{
 botonTitulos.addEventListener('click', ()=>{
     titulosPage();
 });
+
+botonRegistros.addEventListener('click',()=>{
+    mainIndex.innerHTML = `
+        <h1 class="h1NoData">Sección de registros aún pendiente</h1>
+    `
+})
