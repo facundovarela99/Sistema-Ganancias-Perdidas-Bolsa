@@ -15,20 +15,12 @@ const dataEstadoCuenta = await fetchData(IOL_ESTADO_CUENTA_URL)
 const dataActivos = await fetchData(IOL_PORTFOLIO_ACTIVOS_URL); 
 
 botonEstadoCuenta.addEventListener('click', ()=>{
-    (dataEstadoCuenta.message) 
-    ?document.getElementById('mainIndex').innerHTML=`
-        <h1 class="h1NoData">NO HAY DATA DISPONIBLE</h1>
-    ` 
-    :mostrarDataEstadoCuenta(dataEstadoCuenta);
+    mostrarDataEstadoCuenta(dataEstadoCuenta);
 }
 );
 
 botonActivos.addEventListener('click', ()=>{
-    (dataActivos.message)
-    ?document.getElementById('mainIndex').innerHTML=`
-        <h1 class="h1NoData">NO HAY DATA DISPONIBLE</h1>
-    `
-    :mostrarDataActivos(dataActivos);
+    mostrarDataActivos(dataActivos);
 })
 
 
