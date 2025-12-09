@@ -3,7 +3,7 @@ export async function fetchData(endpoint) {
         let response = await fetch(endpoint, {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer aquí iria el access token :)',
+                'Authorization': `Bearer ...`,
                 'Accept': 'application/json'
             }
         });

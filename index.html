@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" defer src="./js/IOL/main.js"></script>
+    <!-- <script type="module" defer src="./js/setInterval.js"></script> -->
     <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
+
 <body id="body">
-    <section class="estadoCuenta">
-        <div class="tituloEstadoCuenta">
-            <h1><strong>ESTADO DE CUENTA</strong></h1>
+    <header>
+        <div class="divTitulo">
+            <div class="tituloPrincipal">
+                <h1 class="tituloPagina">SISTEMA GANANCIA - PERDIDA</h1>
+            </div>
         </div>
-    </section>
-    <section class="seccionTitulos">
-        <div class="tituloTitulos">
-            <h1><strong>TITULOS</strong></h1>
+        <div class="secciones">
+            <div><h2><button class="botonEstadoCuenta" type="button">Estado de cuenta</button></h2></div>
+            <div><h2><button class="botonActivos" type="button">Mis activos</button></h2></div>
+            <div><h2><button class="botonMisRegistros" type="button">Mis registros</button></h2></div>
+            <div><h2><button class="botonTitulos" type="button">Títulos</button></h2></div>
+            <div><h2><button class="botonLogout" type="button">Salir</button></h2></div>
         </div>
-        <div class="divInputTituloBuscado">
-            <label for="inputTitulo">Ingrese el titulo a buscar</label>
-            <input name="inputTitulo" id="inputTitulo" type="text">
-            <button type="button" id="botonBuscarTitulo">BUSCAR</button>
-        </div>
-        <div class="tituloBuscado"></div>
-    </section>
-    <section class="activos">
-        <div class="tituloActivos">
-            <h1><strong>ACTIVOS</strong></h1>
-        </div>
-    </section>
+    </header>
+    <main id="mainIndex">
+        <!-- <section class="estadoCuenta">
+            <div class="tituloEstadoCuenta">
+                <h1><strong>ESTADO DE CUENTA</strong></h1>
+            </div>
+        </section>
+        <section class="seccionTitulos">
+            <div class="tituloTitulos">
+                <h1><strong>TITULOS</strong></h1>
+            </div>
+            <div class="divInputTituloBuscado">
+                <label for="inputTitulo">Ingrese el titulo a buscar</label>
+                <input name="inputTitulo" id="inputTitulo" type="text">
+                <button type="button" id="botonBuscarTitulo">BUSCAR</button>
+            </div>
+            <div class="tituloBuscado"></div>
+        </section>
+        <section class="activos">
+            <div class="tituloActivos">
+                <h1><strong>ACTIVOS</strong></h1>
+            </div>
+        </section> -->
+    </main>
 </body>
+
 </html>

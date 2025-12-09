@@ -1,15 +1,37 @@
 import { fetchData } from "./resolverEndpoint.js";
 import { mostrarDataEstadoCuenta } from "./estadoCuenta.js";
 import { mostrarDataActivos } from "./activos.js";
-import { ingresarTitulo } from "./titulos.js";
+import { titulosPage } from "./titulos.js";
+import { IOL_ESTADO_CUENTA_URL, IOL_PORTFOLIO_ACTIVOS_URL } from "../constantes.js";
 
-const IOL_PORTFOLIO_ACTIVOS_URL = 'https://api.invertironline.com/api/v2/portafolio/argentina';
-const IOL_ESTADO_CUENTA_URL = 'https://api.invertironline.com/api/v2/estadocuenta?';
+// let refreshTokenActualizado = await ActualizarRefreshToken()
+export const mainIndex = document.getElementById('mainIndex');
 
-fetchData(IOL_ESTADO_CUENTA_URL).then(data => mostrarDataEstadoCuenta(data));
-fetchData(IOL_PORTFOLIO_ACTIVOS_URL).then(data => mostrarDataActivos(data));
+const botonEstadoCuenta = document.querySelector('.botonEstadoCuenta');
+const botonActivos = document.querySelector('.botonActivos');
+const botonTitulos = document.querySelector('.botonTitulos');
 
-document.getElementById('botonBuscarTitulo').addEventListener('click', ()=>{
-    let inputTitulo = document.getElementById('inputTitulo');
-    ingresarTitulo(inputTitulo.value);
+const dataEstadoCuenta = await fetchData(IOL_ESTADO_CUENTA_URL)
+const dataActivos = await fetchData(IOL_PORTFOLIO_ACTIVOS_URL); 
+
+botonEstadoCuenta.addEventListener('click', ()=>{
+    (dataEstadoCuenta.message) 
+    ?document.getElementById('mainIndex').innerHTML=`
+        <h1 class="h1NoData">NO HAY DATA DISPONIBLE</h1>
+    ` 
+    :mostrarDataEstadoCuenta(dataEstadoCuenta);
+}
+);
+
+botonActivos.addEventListener('click', ()=>{
+    (dataActivos.message)
+    ?document.getElementById('mainIndex').innerHTML=`
+        <h1 class="h1NoData">NO HAY DATA DISPONIBLE</h1>
+    `
+    :mostrarDataActivos(dataActivos);
+})
+
+
+botonTitulos.addEventListener('click', ()=>{
+    titulosPage();
 });

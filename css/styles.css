@@ -1,9 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    background-color: #007FA3;
+}
+
+.divTitulo{
+    display: flex;
+    justify-content: start;
+    margin-left: 100px;
+}
+
+.tituloPrincipal{
+    width: fit-content;
+}
+
+.divTitulo .tituloPrincipal .tituloPagina{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
 .activos .divPadreActivos{
     display: flex;
     flex-wrap: wrap;
 }
 
-.activos .tituloActivos,.tituloEstadoCuenta{
+.tituloActivos{
     text-align: center;
 }
 
@@ -18,4 +47,91 @@
     flex-direction: column;
     align-items: center;
     width: 20%;
+}
+
+.divPadreActivos{
+    background-color: rgb(0, 157, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.divHijoActivos{
+    margin: 40px;
+    background-color: pink;
+}
+
+.divContenidoActivo{
+    width: fit-content;
+    background-color: chartreuse;
+    margin: 20px;
+    padding: 30px;
+}
+
+.secciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.estadoCuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloEstadoCuenta{
+    width: fit-content;
+}
+
+.divPadreEstadoCuenta{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.divHijoEstadoCuenta{
+    padding: 20px 0;
+}
+
+.h1NoData{
+    text-align: center;
+}
+
+.tituloBuscado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloTitulos{
+    margin: 20px 0;
+}
+
+.tituloTitulos h1{
+    font-size: 3rem;
+}
+
+.divInputTituloBuscado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divInputTituloBuscado h2{
+    font-size: 2.5rem;
+}
+
+#inputTitulo{
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+#botonBuscarTitulo{
+    margin: 2px 0;
+    width: fit-content;
+    padding: 2.5px;
+    border-radius: 8%;
+    background-color: #007FA3;
+    font-size: 1.3rem;
 }

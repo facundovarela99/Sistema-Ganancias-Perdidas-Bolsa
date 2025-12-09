@@ -1,8 +1,16 @@
-const seccionEstadoCuenta = document.querySelector('.estadoCuenta');
-const divPadre = document.createElement('div');
-divPadre.className='divPadreEstadoCuenta';
+import { mainIndex } from "./main.js";
+const seccionEstadoCuenta = document.createElement('section');
+seccionEstadoCuenta.className='estadoCuenta';
 
 export function mostrarDataEstadoCuenta(data){
+    mainIndex.innerHTML='';
+    seccionEstadoCuenta.innerHTML=`
+        <div class="tituloEstadoCuenta">
+                <h2><strong>ESTADO DE CUENTA</strong></h2>
+        </div>
+    `
+    const divPadre = document.createElement('div');
+    divPadre.className='divPadreEstadoCuenta';
     data.cuentas.forEach((moneda)=>{
         const divHijo = document.createElement('div');
         divHijo.className = 'divHijoEstadoCuenta';
@@ -13,7 +21,8 @@ export function mostrarDataEstadoCuenta(data){
             <h3>Estado: ${moneda.estado}</h3>
         `;
         divPadre.appendChild(divHijo);
+        seccionEstadoCuenta.appendChild(divPadre);
     })
-    seccionEstadoCuenta.appendChild(divPadre)
+    mainIndex.appendChild(seccionEstadoCuenta);
 }
 

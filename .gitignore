@@ -1,5 +1,10 @@
 .env
 /node_modules
+/js/models
+/js/server
+/js/setInterval.js
+ganancia_perdida_bolsa.sql
+
 
 npm-debug.log*
 yarn-debug.log*
