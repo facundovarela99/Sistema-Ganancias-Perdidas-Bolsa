@@ -12,7 +12,7 @@ export function mostrarDataEstadoCuenta(data){
         mainIndex.innerHTML='';
         seccionEstadoCuenta.innerHTML=`
             <div class="tituloEstadoCuenta">
-                    <h2><strong>ESTADO DE CUENTA</strong></h2>
+                    <h1><strong>ESTADO DE CUENTA</strong></h1>
             </div>
         `
         const divPadre = document.createElement('div');

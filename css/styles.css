@@ -37,6 +37,10 @@ header{
     text-align: center;
 }
 
+.tituloActivos h1{
+    font-size: 3rem;
+}
+
 .seccionTitulos{
     display: flex;
     flex-direction: column;
@@ -96,6 +100,10 @@ header{
     width: fit-content;
 }
 
+.tituloEstadoCuenta h1{
+    font-size: 3rem;
+}
+
 .divPadreEstadoCuenta{
     width: fit-content;
     display: flex;
@@ -146,4 +154,52 @@ header{
     border-radius: 8%;
     background-color: #007FA3;
     font-size: 1.3rem;
+}
+
+.tituloRegistros{
+    text-align: center;
+}
+
+.tituloRegistros h1{
+    font-size: 3rem;
+}
+
+.divFormRegistro{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.formularioRegistro{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.inputs1, .inputs2{
+    display: flex;
+    flex-direction: row;
+}
+
+.inputs1 div{
+    margin: 10px 20px;
+}
+
+.inputs2 div{
+    margin: 10px 20px;
+}
+
+.formularioRegistro p, input{
+    font-size: 2rem;
+}
+
+.enviarBtnFormRegistro, .limpiarBtnFormRegistro{
+    width: fit-content;
+}
+
+.btnsForm{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: space-evenly;
 }
