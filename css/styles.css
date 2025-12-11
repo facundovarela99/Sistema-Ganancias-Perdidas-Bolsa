@@ -203,3 +203,61 @@ header{
     margin-top: 40px;
     justify-content: space-evenly;
 }
+
+.bodyLogin{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+.divLogin{
+    height: 350px;
+    background-color: #0080a386;
+    padding: 5px;
+}
+
+.tituloLogin h1{
+    font-size: 2.5rem;
+}
+
+.cardLogin{
+    height: 100%;
+    background-color: #0080a39f;
+    padding: 5px;
+}
+
+.divCuerpoLogin{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #007FA3;
+    padding: 10px;
+}
+
+.divFormLogin{
+    height: 80%;
+    background-color: #007FA3;
+}
+
+.formLogin{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
+    background-color: #015d77;
+}
+
+.divInputUsername label,
+.divInputPassword label{
+    font-size: 1.8rem;
+}
+
+.divInputBotonLogin{
+    text-align: center;
+}
