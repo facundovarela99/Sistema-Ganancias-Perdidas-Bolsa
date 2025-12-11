@@ -11,6 +11,10 @@ header{
     background-color: #007FA3;
 }
 
+#body{
+    background-color: beige
+}
+
 .divTitulo{
     display: flex;
     justify-content: start;

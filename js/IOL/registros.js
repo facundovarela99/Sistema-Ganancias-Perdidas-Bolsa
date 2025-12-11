@@ -2,6 +2,17 @@ import { mainIndex } from "./main.js";
 const seccionRegistros = document.createElement('div');
 seccionRegistros.className = 'seccionRegistros';
 
+const seccionRegistrosCreados = document.createElement('div');
+const divRegistrosCreados = document.createElement('div')
+seccionRegistrosCreados.className = 'seccionRegistrosCreados';
+divRegistrosCreados.className = 'divRegistrosCreados';
+
+let ArrayRegistrosAgregados;
+
+(localStorage.getItem('ArrayRegistrosAgregados'))
+? ArrayRegistrosAgregados = JSON.parse(localStorage.getItem('ArrayRegistrosAgregados'))
+: ArrayRegistrosAgregados = [];
+
 export function mostrarRegistros(){
     seccionRegistros.innerHTML = `
         <div class="tituloRegistros">
@@ -36,13 +47,63 @@ export function mostrarRegistros(){
                     </div>
                 </div>
                 <div class="btnsForm">
-                    <input class="enviarBtnFormRegistro" type="submit" value="Enviar" id="enviar">
+                    <button class="enviarBtnFormRegistro" type="submit" id="btnEnviarRegistro">Enviar</button>
                     <input class="limpiarBtnFormRegistro" type="reset" value="Limpiar" id="limpiar">
-                </div>
-            </form>
-        </div>
-    `;
+                    </div>
+                    </form>
+                    </div>
+                    `;
     divPadreRegistros.innerHTML=divRegistro.outerHTML;
     seccionRegistros.appendChild(divPadreRegistros);
     mainIndex.innerHTML = seccionRegistros.outerHTML;
+
+    const botonEnviarRegistro = document.getElementById('btnEnviarRegistro');
+    botonEnviarRegistro.addEventListener('click', (event) =>{
+        event.preventDefault();
+
+        const registroTitulo = document.getElementById('registroTitulo').value;
+        const registroCantidad = document.getElementById('registroCantidad').value;
+        const registroPrecioCompra = document.getElementById('registroPrecioCompra').value;
+        const registroFecha = document.getElementById('registroFecha').value;
+
+        let nuevoRegistro = {
+            titulo:registroTitulo,
+            cantidad:registroCantidad,
+            precioAccion:registroPrecioCompra,
+            fecha:registroFecha
+        };
+
+        ArrayRegistrosAgregados.push(nuevoRegistro);
+
+        const divTarjetaRegistroCreado = document.createElement('div');
+        const cardRegistroCreado = document.createElement('div');
+        divTarjetaRegistroCreado.className = 'divTarjetaRegistroCreado';
+        ArrayRegistrosAgregados.forEach((registro)=>{
+            cardRegistroCreado.className = 'cardRegistroCreado';
+            cardRegistroCreado.innerHTML = `
+                <div>
+                    <h3>Título: ${registro.titulo}</h3>
+                </div>
+                <div>
+                    <h3>Cantidad de acciones: ${registro.cantidad}</h3>
+                </div>
+                <div>
+                    <h3>Precio por acción: $${registro.precioAccion}</h3>
+                </div>
+                <div>
+                    <h3>Fecha: ${registro.fecha}</h3>
+                </div>
+                <div>
+                    <h3>Subtotal compra: ${registro.cantidad * registro.precioAccion}</h3>
+                </div>
+            `;
+            divTarjetaRegistroCreado.appendChild(cardRegistroCreado);
+        })
+        divRegistrosCreados.innerHTML = divTarjetaRegistroCreado.outerHTML;
+        seccionRegistrosCreados.innerHTML = divRegistrosCreados.outerHTML;
+        mainIndex.innerHTML = seccionRegistrosCreados.outerHTML;
+    })
+
 }
+
+                    // <input class="enviarBtnFormRegistro" type="submit" value="Enviar" id="enviar">
