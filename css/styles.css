@@ -87,7 +87,8 @@ header{
 .botonActivos,
 .botonMisRegistros,
 .botonTitulos,
-.botonLogout{
+.botonLogout,
+.btnCrearNuevoRegistro{
     font-size: 1rem;
     margin: 15px 0;
     padding: 5px;
@@ -120,6 +121,7 @@ header{
 
 .h1NoData{
     text-align: center;
+    margin: 20px 0;
 }
 
 .tituloBuscado{
@@ -263,5 +265,38 @@ header{
 }
 
 .divInputBotonLogin{
+    text-align: center;
+}
+
+.divCamposRegistroVacios{
+    text-align: center;
+}
+
+.divTituloRegistros{
+    text-align: center;
+    margin: 20px 0;
+}
+.divTituloRegistros h1{
+    font-size: 3rem;
+}
+
+.divRegistros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.divRegistros .cardRegistroCreado{
+    padding: 20px;
+    margin: 20px;
+    background-color: #007FA3;
+    
+}
+
+.divRegistros .cardRegistroCreado p{
+    font-size: 1.5rem;
+}
+
+.divBtnCrearNuevoRegistro{
     text-align: center;
 }

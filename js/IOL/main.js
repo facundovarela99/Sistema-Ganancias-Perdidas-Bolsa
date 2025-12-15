@@ -2,8 +2,8 @@ import { fetchData } from "./resolverEndpoint.js";
 import { mostrarDataEstadoCuenta } from "./estadoCuenta.js";
 import { mostrarDataActivos } from "./activos.js";
 import { titulosPage } from "./titulos.js";
-import { mostrarRegistros } from "./registros.js";
 import { IOL_ESTADO_CUENTA_URL, IOL_PORTFOLIO_ACTIVOS_URL } from "../constantes.js";
+import { ArrayRegistrosAgregados, renderizarRegistros } from "./registros.js";
 
 // let refreshTokenActualizado = await ActualizarRefreshToken()
 export const mainIndex = document.getElementById('mainIndex');
@@ -31,5 +31,5 @@ botonTitulos.addEventListener('click', ()=>{
 });
 
 botonRegistros.addEventListener('click',()=>{
-    mostrarRegistros();
+    renderizarRegistros(ArrayRegistrosAgregados);
 })
