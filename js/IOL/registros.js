@@ -6,15 +6,10 @@ seccionRegistros.className = 'seccionRegistros';
 
 // const seccionRegistrosGuardados
 
-export let ArrayRegistrosAgregados;
-
-if (localStorage.getItem('ArrayRegistrosAgregados')){
-    ArrayRegistrosAgregados = JSON.parse(localStorage.getItem('ArrayRegistrosAgregados'))
-} else  {
-    ArrayRegistrosAgregados = [];
+export function validarStorage(storage){
+    if (storage) return JSON.parse(storage);
+    return [];
 }
-
-renderizarRegistros(ArrayRegistrosAgregados);
 
 export function renderizarRegistros(ArrayRegistros){
     mainIndex.innerHTML = '';
@@ -26,35 +21,40 @@ export function renderizarRegistros(ArrayRegistros){
             <button class="btnCrearNuevoRegistro" type="button">CREAR NUEVO REGISTRO</button>
         </div>
     `;
-    
-    // document.querySelector('.btnCrearNuevoRegistro').addEventListener('click', mostrarTemplateRegistros());
 
     if (ArrayRegistros.length !== 0){
-        
         const divRegistros = document.createElement('div');
         divRegistros.className = 'divRegistros';
-        console.log('Registros: ', ArrayRegistros[0])
+        console.log('Registros con mas de un elemento:\n ', ArrayRegistros)
 
         ArrayRegistros.forEach((registro) => {
-
+            console.log(registro.id)
             const cardRegistroCreado = document.createElement('div');
             cardRegistroCreado.className = 'cardRegistroCreado';
             cardRegistroCreado.innerHTML = `
                 <div class="divHijoCardRegistroCreado">
                     <p><strong>Título: ${registro.titulo}</strong></p>
                     <p><strong>Cantidad acciones: ${registro.cantidad}</strong></p>
-                    <p><strong>Precio por accion: ${registro.precioAccion}</strong></p>
-                    <p><strong>Subtotal: ${registro.precioAccion * registro.cantidad}</strong></p>
+                    <p><strong>Precio por accion: $${registro.precioAccion}</strong></p>
+                    <p><strong>Subtotal: $${registro.precioAccion * registro.cantidad}</strong></p>
                     <p><strong>Fecha de compra: ${registro.fecha}</strong></p>
                 </div>
                 <div class="divBtnEliminarRegistro">
-                    <button class="BtnEliminarRegistro${registro.id}" type="button">ELIMINAR REGISTRO</button>
+                    <button class="BtnEliminarRegistro${registro.id}" type="button" data-id="${registro.id}">ELIMINAR REGISTRO</button>
                 </div>
             `;
-
             divRegistros.appendChild(cardRegistroCreado);
-            
         });
+
+        // DELEGACIÓN DE EVENTOS para los botones de eliminar
+        divRegistros.addEventListener('click', (event) => {
+            if (event.target && event.target.className.startsWith('BtnEliminarRegistro')) {
+                const id = event.target.getAttribute('data-id');
+                console.log('Eliminar registro con id:', id);
+                // agregar la lógica para eliminar el registro
+            }
+        });
+
         seccionRegistros.appendChild(divRegistros);
     } else{
 
@@ -69,21 +69,9 @@ export function renderizarRegistros(ArrayRegistros){
     mainIndex.appendChild(seccionRegistros);
 
     const btnCrearNuevoRegistro = document.querySelector('.btnCrearNuevoRegistro');
-
-    const btnEliminarRegistro = document.querySelector(`.BtnEliminarRegistro${registro.id}`)
-
-    if (btnEliminarRegistro){
-        btnEliminarRegistro.addEventListener('click', ()=>{
-            mainIndex.innerHTML=`
-                saldñklñsadklñsadklñsad
-                dsalñkdsalñkdsalñdksalñas
-            `
-        })
-    }
     
-    
-        btnCrearNuevoRegistro.addEventListener('click', ()=>{
-            mostrarTemplateRegistros();
-        });
+    btnCrearNuevoRegistro.addEventListener('click', ()=>{
+        mostrarTemplateRegistros();
+    });
 
 }
