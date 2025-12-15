@@ -51,7 +51,11 @@ export function renderizarRegistros(ArrayRegistros){
             if (event.target && event.target.className.startsWith('BtnEliminarRegistro')) {
                 const id = event.target.getAttribute('data-id');
                 console.log('Eliminar registro con id:', id);
-                // agregar la lógica para eliminar el registro
+                localStorage.clear();
+                renderizarRegistros(ArrayRegistros);
+                // const nuevosRegistros = ArrayRegistros.filter(registro => registro.id !== id);
+                // localStorage.setItem('ArrayRegistrosAgregados', JSON.stringify(nuevosRegistros));
+                // renderizarRegistros(nuevosRegistros);
             }
         });
 

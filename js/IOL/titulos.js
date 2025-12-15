@@ -41,7 +41,12 @@ function ingresarTitulo(titulo){
         if (divTarjeta){
             divTarjeta.innerHTML = "";
         }
-        mensajeError.innerHTML = `
+
+        setInterval(() =>{
+                mensajeError.innerHTML=''
+            }, 2500);
+            
+            mensajeError.innerHTML = `
             <p style="color:red; font-weight:bold;">
                 No ingresó ningún título. Por favor ingresar un título.
             </p>

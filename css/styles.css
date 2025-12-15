@@ -25,7 +25,7 @@ header{
     width: fit-content;
 }
 
-.divTitulo .tituloPrincipal .tituloPagina{
+.divTitulo .tituloPrincipal .tituloPagina1, .tituloPagina2{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -299,4 +299,38 @@ header{
 
 .divBtnCrearNuevoRegistro{
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+
+    header .divTitulo{
+        display: flex;
+        justify-content: start;
+        margin-left: 20px !important;
+    }
+
+    .tituloPrincipal .tituloPagina1,.tituloPagina2{
+        font-size: 2.5rem !important;
+    }
+
+  .formularioRegistro .inputs1, .inputs2{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formularioRegistro .btnsForm{
+    margin: 0;
+  }
+
+  .divInputTituloBuscado label h2{
+    font-size: 1.5rem;
+  }
+
+  .divInputTituloBuscado #inputTitulo{
+    font-size: 1.5rem;
+  }
+
+  #mensajeError{
+    margin: 25px 0 !important;
+  }
 }
