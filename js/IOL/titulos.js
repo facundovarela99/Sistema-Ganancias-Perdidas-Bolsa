@@ -23,16 +23,17 @@ export function titulosPage(){
     mainIndex.innerHTML=seccionTitulo.outerHTML;
 
     document.getElementById('botonBuscarTitulo').addEventListener('click',()=>{
-        ingresarTitulo(document.getElementById('inputTitulo').value)
+        infoTitulo(document.getElementById('inputTitulo').value)
     })
 
 }
 
-function ingresarTitulo(titulo){
+async function infoTitulo(titulo){
     const mensajeError = document.getElementById('mensajeError');
     if (titulo){
         let nuevoTitulo = IOL_TITULO.replace('titulo', titulo);
-        fetchData(nuevoTitulo).then(data => mostrarDataTitulos(data));
+        const dataTitulo = await fetchData(nuevoTitulo); 
+        mostrarDataTitulos(dataTitulo);
         document.getElementById('inputTitulo').value = '';
         console.log(nuevoTitulo);
         mensajeError.innerHTML = '';
@@ -84,7 +85,7 @@ function mostrarDataTitulos(data){
         mainIndex.appendChild(seccionTitulo);
         document.getElementById('botonBuscarTitulo').addEventListener('click', ()=>{
         let inputTitulo = document.getElementById('inputTitulo');
-        ingresarTitulo(inputTitulo.value);
+        infoTitulo(inputTitulo.value);
     });
     }
 
