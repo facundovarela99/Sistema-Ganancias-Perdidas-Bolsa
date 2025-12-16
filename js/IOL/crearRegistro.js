@@ -85,7 +85,7 @@ export function mostrarTemplateRegistros(){
                 </div>
                 <div class="btnsForm">
                     <button class="enviarBtnFormRegistro" type="submit" id="btnEnviarRegistro">Enviar</button>
-                    <input class="limpiarBtnFormRegistro" type="reset" value="Limpiar" id="limpiar">
+                    <button class="limpiarBtnFormRegistro" type="reset" value="Limpiar" id="limpiar">Limpiar</button>
                 </div>
             </form>
         </div>

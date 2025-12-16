@@ -36,7 +36,7 @@ export function renderizarRegistros(ArrayRegistros){
                     <p><strong>Título: ${registro.titulo}</strong></p>
                     <p><strong>Cantidad acciones: ${registro.cantidad}</strong></p>
                     <p><strong>Precio por accion: $${registro.precioAccion}</strong></p>
-                    <p><strong>Subtotal: $${registro.precioAccion * registro.cantidad}</strong></p>
+                    <p><strong>Subtotal: $${(registro.precioAccion * registro.cantidad).toFixed(2)}</strong></p>
                     <p><strong>Fecha de compra: ${registro.fecha}</strong></p>
                 </div>
                 <div class="divBtnEliminarRegistro">

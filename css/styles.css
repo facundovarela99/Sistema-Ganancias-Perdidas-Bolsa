@@ -83,7 +83,7 @@ header{
     justify-content: space-evenly;
 }
 
-.secciones .botonEstadoCuenta,
+.botonEstadoCuenta,
 .botonActivos,
 .botonMisRegistros,
 .botonTitulos,
@@ -201,6 +201,7 @@ header{
 
 .enviarBtnFormRegistro, .limpiarBtnFormRegistro{
     width: fit-content;
+    font-size: 1rem;
 }
 
 .btnsForm{
@@ -313,13 +314,30 @@ header{
         font-size: 2.5rem !important;
     }
 
+    .tituloRegistros h1{
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
   .formularioRegistro .inputs1, .inputs2{
     display: flex;
     flex-direction: column;
   }
 
+  .inputs1 div, .inputs2 div{
+    margin: 5px 20px; 
+  }
+
+  .inputs1 div p, .inputs2 div p{
+    margin-bottom: 0;
+  }
+
   .formularioRegistro .btnsForm{
-    margin: 0;
+    margin-top: 25px;
+  }
+
+  .btnsForm button{
+    font-size: 1.25rem;
   }
 
   .divInputTituloBuscado label h2{
@@ -333,4 +351,5 @@ header{
   #mensajeError{
     margin: 25px 0 !important;
   }
+
 }

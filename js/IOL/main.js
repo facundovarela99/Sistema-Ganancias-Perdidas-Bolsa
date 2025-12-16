@@ -18,19 +18,30 @@ const dataActivos = await fetchData(IOL_PORTFOLIO_ACTIVOS_URL);
 
 botonEstadoCuenta.addEventListener('click', ()=>{
     mostrarDataEstadoCuenta(dataEstadoCuenta);
+    cerrarDropdown();
 }
 );
 
 botonActivos.addEventListener('click', ()=>{
     mostrarDataActivos(dataActivos);
+    cerrarDropdown();
 })
 
 
 botonTitulos.addEventListener('click', ()=>{
     titulosPage();
+    cerrarDropdown();
 });
 
 botonRegistros.addEventListener('click',()=>{
     let ArrayRegistrosAgregados = validarStorage(localStorage.getItem('ArrayRegistrosAgregados'));
     renderizarRegistros(ArrayRegistrosAgregados);
+    cerrarDropdown();
 })
+
+
+function cerrarDropdown(){
+  const collapseEl = document.getElementById('navbarSupportedContent');
+  const bsCollapse = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl);
+  bsCollapse.hide();
+}
